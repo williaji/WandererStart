@@ -8,6 +8,18 @@ mission "JW Recon 1"
 	
 	on offer
 		conversation
+			branch "deferred"
+				has "JW Recon 1: deferred"
+			label "deferred"
+				clear "JW Recon 1: deferred"
+				`The Wanderers had asked you obtain scanners and demonstrate their effectivenes. Are you ready to show them what the scanners can do?`
+				choice
+					`	(I'm ready to scan some ships)`
+						goto readynow
+					`	(I'm too busy right now.)`
+						defer
+
+
 			`When you walk into the spaceport Rek greets you and asks you to join him in a meeting. He leads you to a conference room where Ambassador Sayari and several Wanderers in uniform are discussing a star map projected from the table.`
 			`	They look up as you walk in and one of the commanders calls you over. "Captain <last>, she begins, "We are [discussing, pondering] the source of the Unfettered jump drives." She points to a star system to the right of Ehma Ti. "We know they must come through this [area, region] of space, since they cannot travel through Hai territory.`
 			`	"There are, of course, problems with us [gaining access, travelling] to those systems," She says and  rustles her feathers in a gesture approximating a shrug, "but even if we had access, we can only [evaluate, inspect] a ship by disabiling and boarding it. Ambassador Sayari had indicated that the Hai have [inspectors, scanners] that can [discover, probe] and ship at a distance, but had no technical details. We hope that you would be able to tell us more."`
@@ -30,12 +42,19 @@ mission "JW Recon 1"
 					goto needscanner
 				`	"I don't want to help the Wanderers."`
 					decline
+
 			label needscanner
 			`	The commander ruffles her feathers in a display of frustration. "Please come back to us when you have the [inspector, scanner] so we can [determine, choose] our course of action.`
-			defer
+			set "JW Recon 1: deferred"
+				defer
+				goto end
+			label readynow
+			`	You reach out to Rek to tell him you have outfitted the <ship> with the scanners and are ready to perform the testing. He adds one of the military commanders to the call.`
+				goto gladto
 			label gladto
 			`	"Good," the commander replies and issues a brief command over her commlink. "There are some ships undergoing field [testing, trials] in a restricted area in this system. Please [inspect, scan] them and show us the results."`
-			accept
+				accept
+			label end
 			
 	on accept
 		log "Demonstrated scanner technology to the Wanderers."
