@@ -95,17 +95,18 @@ mission "Wanderers Spera Anatrusk Outfitter 2c"
 		dialog "The construction supervisor drops by as the workers are unloading. He gives you a credit chip for <payment> and asks you to meet him in the tent that serves as the spaceport when all the deliveries are done."
 		payment 250000 3
 
+
 mission "Wanderers Spera Anatrusk Outfitter 3"
 	landing
 	name "Warehouse equipment to <destination>"
-	description "Deliver warehouse equipment and staff for the outfitter on <desitination>."
+	description "Deliver warehouse equipment and staff for the outfitter on <destination>."
 	source "Spera Anatrusk"
 	destination "Vara K'chrai"
 
 	to offer
-		has "Wanderers Spera Anatrusk Outfitter 2a"
-		has "Wanderers Spera Anatrusk Outfitter 2b"
-		has "Wanderers Spera Anatrusk Outfitter 2c"
+		has "Wanderers Spera Anatrusk Outfitter 2a: done"
+		has "Wanderers Spera Anatrusk Outfitter 2b: done"
+		has "Wanderers Spera Anatrusk Outfitter 2c: done"
 
 	on offer
 		conversation 
@@ -123,28 +124,6 @@ mission "Wanderers Spera Anatrusk Outfitter 3"
 			`	You thank them and wonder how strange your translator makes you sound the Wanderers.`
 
 
-mission "Wanderers Spera Anatrusk Outfitter 2a"
-	landing
-	name "Construction workers to <destination>"
-	description "Now that the harvest is over, bring workers from <stopovers> to <destination> to build the new outfitter. Payment is <payment>."
-	source "Vara K'chrai"
-	destination "Spera Anatrusk"
-	stopover "Vara Rakak"
-	passengers 75
-
-	to offer
-		has "Wanderers Spera Anatrusk Outfitter 1: done"
-
-	on stopover
-		dialog "The construction workers board your ship chattering excitedly about their chance to pass through the Eye to new worlds."
-
-	on visit
-		dialog phrase "generic stopover on visit"
-
-	on complete
-		dialog "The foreman greets the <ship> as you land at the spaceport site. He hands you a credit chip for <payment> and immediately begins assigning work to the teams."
-		payment 750000
-
 mission "Wanderers Spera Anatrusk Outfitter 3a"
 	landing
 	name "Warehouse equipment to <destination>"
@@ -161,7 +140,7 @@ mission "Wanderers Spera Anatrusk Outfitter 3a"
 		dialog phrase "generic stopover on visit"
 
 	on complete
-		dialog "A team of workers unload the <cargo> while the foreman checks the manifest before handing you a credit chip for <payment>."
+		dialog "A team of workers unload the <cargo> while the foreman checks the manifest before handing you a credit chip for <payment>. He tells you to [attend, meet] the construction supervisor in the spaceport tent once the jobs are complete."
 		payment 200000 2
 
 mission "Wanderers Spera Anatrusk Outfitter 3b"
@@ -209,3 +188,46 @@ mission "Wanderers Spera Anatrusk Outfitter 3c"
 	on complete
 		dialog "The new staff walk off your ship with their heads swivelling around to take in the new landscape. You can see the shell of the new warehouse to shelter the equipment in the outfitter, but it looks like the Wanderers will be staying in tents."
 		payment 300000 9
+
+
+mission "Wanderers Spera Anatrusk Outfitter 4"
+	landing
+	name "Escort outfitter convoy"
+	description "Escort outfitter convoy to <destination>."
+	source "Spera Anatrusk"
+	destination "Spera Anatrusk"
+	stopover "Vara K'chrai"
+
+	to offer
+		has "Wanderers Spera Anatrusk Outfitter 3a: done"
+		has "Wanderers Spera Anatrusk Outfitter 3b: done"
+		has "Wanderers Spera Anatrusk Outfitter 3c: done"
+
+	on offer
+		conversation
+			`You watch the work crews unload by uncrating the repulsor lifts whey they are in the hold and then using to move the crates of shelving and supplies into the prefabricated shell that stands on what was formerly an empty field. The spaceport tent has been moved and you can see a new line of stakes where the spaceport building itself will be.`
+			`	The construction supervisor is shouting into some kind of bull horn to one of the work crews, trying to be heard over the sound of the construction equipment. When he notices you he he stops and flutter walks over to you.`
+			`Captain! It is [exciting, nerve-wracking] to see that the equipment is here. We have a [fleet, convoy] of freighters being loaded at <stopovers>. If you can escort them, we will have everthing we need to open at least a minimal outfitter."`
+			
+			choice
+			`	"I'd be glad to."`
+				accept
+			`	"I'm not willing to risk the Mereti ships for the freighters."`
+				decline
+			`The supervisor nods  his head and then turns back to the construction site. He lifts his bull horn and starts shouting at the workers. He get two sentences out before he remembers to stop speaking Hai.`
+
+	on stopover
+	npc accompany
+	government "Wanderer"
+	fleet
+		names "wanderer"
+		variant
+			"Deep River"
+			"Deep River"
+			"Deep River"
+	
+	on complete
+		conversation
+			`You heave a sigh of relief when all the freighters are safely on the ground Deep Rivers may have impressive armor and shielding but they are still slow and the Mereti slicers will destroy any hull given enough time.`
+			`	Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews come over and beseige the outfitter staff, wanting to know when they can place an order. At least you aren't the center of attention this time.`
+			`	The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. "He hands you a credit chip for <payment> and says, "Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. You are welcome to [wander, work] with us.`
