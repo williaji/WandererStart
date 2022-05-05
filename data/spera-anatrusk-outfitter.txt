@@ -1,0 +1,40 @@
+mission "Wanderers Spera Anatrusk Outfitter 1"
+	landing
+	name "Establish outfitter on Spera Anatrusk"
+	description "Return to the Wanderer capital on <destination>."
+	source "Spera Anatrusk"
+	destination "Vara K'chrai"
+	to offer
+		has "event: wanderers: spera anatrusk colony"
+	on offer
+		log `The Wanderers have established a colony on <planet> in Korath space, but they need help getting the most basic infastructure established.`
+		conversation
+			`The makeshift spaceport is really a set of landing pads, most of which are packed earth and gravel. You can see a small crew of wanderers hammering forms together with a concrete mixer running nearby. It's a far cry from the clean and elegant spaceports the Wanderers are used to, but not far off for the Dirt Belt and anarchist worlds you've known.`
+			`	Something of an argument is taking place in front of a tent at the edge of landing area. There are lot of wings flapping and raised voices, but they aren't speaking Hai, so you have no idea what it's about.`
+			choice
+				`	(Go over and investigate.)`
+					goto investigate
+				`	(Refuel and leave.)`
+					decline
+			label investigate
+			`	The argument seems to be breaking up, with unhappy captains heading back to their ships. You see a few Strong Winds powering up without bothering to refuel.`
+			`	As you walk up to the Wanderer they were all shouting at he looks at you warily as you greet him in Hai. He is briefly startled and cocks his head and regards you for a moment and then says, "Ah. You are the [lost, lonely] one from from the worlds beyond the Hai." He hold up a taloned hand and continues before you can say anything, "This spaceport isn't even built. I don't have any Thunderheads. I don't have any parts. I barely have fuel. If you need something else, you have to go back to <destination>. I don't know when it will get better because everyone is flying around and either exploring or getting killed and no one is avaialable to do transport work."`
+			choice
+				`	"Tell me what you need and I'll handle it."`
+					goto handle
+				`	"I guess I'll just leave, then."`
+					decline
+			label handle
+			`	"Honestly?" he asks. When you nod your head he hands you a data crystal and says, "Take this to Vara K'chrai and they will make the arrangements. We need construction equipment, materials and workers and I can't even request them directly since communications don't work through the wormhole.`
+			`	You turn to go as group of Wanderers with surveying equipment walk up. They are all dressed in hard hats and safety gear. The foreman you've been speaking to pulls up a hologram of the site to disucss with the surveyors. As you walk off, the translator just picks up. "The Eye opens and we are getting help from the [alien, stranger] and not our own flock."`
+				accept
+	on complete
+		conversation
+			`As you land at the spaceport, you're sure you see a few of the ships you saw on <planet> with various outfits stacked for instllation. It's hard to find anyone who speaks Hai, but you find your way to the main spaceport office and hand over the chip. She chitters excitedly and calls someone over. They quickly enter information into their systems and then hand the chip back to you. After a few moments of confusion where you end up making your Hai ear gesture, they call up an app and speak into it. Your translator picks up "Job board. Job board." Hopefully everything has been booked for you.`
+
+mission "Wanderers Spera Anatrusk Outfitter 2a"
+		description "Now that the harvest is over, bring these <bunks> Wanderers to <destination> to build the new outfitter."
+		source "Vara K'chrai"
+		destination "Spera Anatrusk"
+		waypoint "Vara Rakak"
+		bunks 75

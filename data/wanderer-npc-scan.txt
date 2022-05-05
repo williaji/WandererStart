@@ -17,6 +17,7 @@ mission "JW Recon 1"
 					`	(I'm ready to scan some ships)`
 						goto readynow
 					`	(I'm too busy right now.)`
+						set "JW Recon 1: deferred"
 						defer
 
 
