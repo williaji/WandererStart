@@ -227,7 +227,7 @@ mission "Wanderers Spera Anatrusk Outfitter 4"
 		conversation
 			`You watch the work crews unload by uncrating the repulsor lifts in the hold and then using to move the crates of shelving and supplies into the prefabricated shell that stands on what was formerly an empty field. The spaceport tent has been moved and you can see a new line of stakes where the spaceport building itself will be.`
 			`	Clearly other supplies are coming in as well since you can see three Deep Rivers being unloaded and containers of equipment and construction materials being stacked in a massive yard near the outfitter building.`
-			`	The construction supervisor is shouting into some kind of bull horn to one of the work crews, trying to be heard over the sound of the construction equipment. When he notices you he he stops and flutter walks over to you.`
+			`	The construction supervisor is shouting into some kind of bull horn to one of the work crews, trying to be heard over the heavy equipment. When he notices you, he stops and flutter-walks over to you.`
 			`Captain! It is [exciting, nerve-wracking] to see that the equipment is here. We have a [fleet, convoy] of freighters to be loaded with outfits at <stopovers>. If you can escort them, we will have everthing we need to open at least a minimal outfitter."`
 			
 			choice
@@ -252,12 +252,7 @@ mission "Wanderers Spera Anatrusk Outfitter 4"
 				"Deep River"
 	
 	on complete
-		dialog "Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order. The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. He hands you a credit chip for <payment>."
-		# conversation
-		# 	`You heave a sigh of relief when all the freighters are safely on the ground. Deep Rivers may have impressive armor and shielding but they are still slow and the Mereti slicers will destroy any hull given enough time.`
-		# 	`	Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order.`
-		# 	`	The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. He hands you a credit chip for <payment>. and says, "The [Leader, Director] of Spaceports has said that we must have a full outfitter here to support the [Trek, Migration]. We are sending another convoy to pick up the more advanced outfits and some dignitaries to officially [inaugurate, open] the outfitter. They said it would be [appropriate, fitting] for you to escort them."`
-		# 	`	"Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
+		dialog "Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order. The construction supervisior comes over and moves his head in a way you've come to associate with humor as he watches the commotion at the other landing pad. He hands you a credit chip for <payment>."
 		payment 3000000
 
 
@@ -277,7 +272,7 @@ mission "Wanderers Spera Anatrusk Outfitter 5"
 	on offer
 		conversation
 			`The spaceport building is taking shape, with all the foundations set and the walls of the main hall in place. It probably helps that the Wanderers are able to fly about all levels of the structure without needing to traverse ladders, but it's more their teamwork and dedication at work. It's like a human barn raising but on a larger scale.`
-			`	The manager you brought over a few weeks ago to open the outfitter flaps down and lands beside you. You both watch the construction for a moment and then says, "The [Leader, Director] of Spaceports has said that we must have a full outfitter here to support the [Trek, Migration]. We are sending another convoy to pick up the more advanced outfits and some dignitaries to officially [inaugurate, open] the outfitter. They said it would be [appropriate, fitting] for you to escort them.`
+			`	The manager you brought over a few weeks ago to open the outfitter flaps down and lands beside you. You both watch the construction for a moment and then she says, "The [Leader, Director] of Spaceports has said that we must have a full outfitter here to support the [Trek, Migration]. We are sending another convoy to pick up the more advanced outfits and some dignitaries to officially [inaugurate, open] the outfitter. They said it would be [appropriate, fitting] for you to escort them.`
 			
 			choice
 				`	"I'd be honored."`
@@ -304,5 +299,5 @@ mission "Wanderers Spera Anatrusk Outfitter 5"
 	on complete
 		conversation
 			`You heave a sigh of relief when all the freighters are safely on the ground. Deep Rivers may have impressive armor and shielding but they are still slow and the Mereti slicers will destroy any hull given enough time.`
-			`	There are more cameras and speeched and you are not allowed to escape this time: they insist that you sit on the platform throughout the ceremony. Once it's all over, the Director of Spaceports hands you a credit chip for <payment> and says, "Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
+			`	There are more cameras and speeches and you are not allowed to escape this time: they insist that you sit on the platform throughout the ceremony. Once it's all over, the Director of Spaceports hands you a credit chip for <payment> and says, "Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
 		payment 3000000
