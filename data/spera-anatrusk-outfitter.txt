@@ -244,6 +244,58 @@ mission "Wanderers Spera Anatrusk Outfitter 4"
 		planet "Vara K'chrai"
 		fleet
 			names "wanderer"
+			cargo 5
+			outfitters "Wanderer Basics"
+			variant
+				"Deep River"
+				"Deep River"
+				"Deep River"
+	
+	on complete
+		dialog "Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order. The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. He hands you a credit chip for <payment>."
+		# conversation
+		# 	`You heave a sigh of relief when all the freighters are safely on the ground. Deep Rivers may have impressive armor and shielding but they are still slow and the Mereti slicers will destroy any hull given enough time.`
+		# 	`	Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order.`
+		# 	`	The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. He hands you a credit chip for <payment>. and says, "The [Leader, Director] of Spaceports has said that we must have a full outfitter here to support the [Trek, Migration]. We are sending another convoy to pick up the more advanced outfits and some dignitaries to officially [inaugurate, open] the outfitter. They said it would be [appropriate, fitting] for you to escort them."`
+		# 	`	"Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
+		payment 3000000
+
+
+mission "Wanderers Spera Anatrusk Outfitter 5"
+	landing
+	name "Escort outfitter convoy"
+	description "Escort outfitter convoy to <destination>."
+	blocked "You are [lacking, missing] <capacity> to transport these Wanderer leaders."
+	source "Spera Anatrusk"
+	destination "Spera Anatrusk"
+	stopover "Vara K'chrai"
+	passengers 30
+
+	to offer
+		has "Wanderers Spera Anatrusk Outfitter 4: done"
+		
+	on offer
+		conversation
+			`The spaceport building is taking shape, with all the foundations set and the walls of the main hall in place. It probably helps that the Wanderers are able to fly about all levels of the structure without needing to traverse ladders, but it's more their teamwork and dedication at work. It's like a human barn raising but on a larger scale.`
+			`	The manager you brought over a few weeks ago to open the outfitter flaps down and lands beside you. You both watch the construction for a moment and then says, "The [Leader, Director] of Spaceports has said that we must have a full outfitter here to support the [Trek, Migration]. We are sending another convoy to pick up the more advanced outfits and some dignitaries to officially [inaugurate, open] the outfitter. They said it would be [appropriate, fitting] for you to escort them.`
+			
+			choice
+				`	"I'd be honored."`
+					accept
+				`	"It's too dangerous to transport Wanderer dignitaries here."`
+					decline
+			`	"You are much like us," she says. "You carry seeds from place to place and some take root and grow and over thousands of years transform worlds.`
+			`	You're not really sure how to respond to that so you just nod and smile. After a moment, she heads back to the outfitter and you prepare to travel to to <stopovers>.`
+
+	on stopover
+		dialog "You are happy that you aren't part of the speeches or news coverage as the Wanderer leaders officially start the Migration through the Eye. You think about Rek and wonder how his treatment is going."
+
+	npc accompany
+		planet "Vara K'chrai"
+		fleet
+			names "wanderer"
+			cargo 5
+			outfitters "Wanderer Advanced"
 			variant
 				"Deep River"
 				"Deep River"
@@ -252,6 +304,5 @@ mission "Wanderers Spera Anatrusk Outfitter 4"
 	on complete
 		conversation
 			`You heave a sigh of relief when all the freighters are safely on the ground. Deep Rivers may have impressive armor and shielding but they are still slow and the Mereti slicers will destroy any hull given enough time.`
-			`	Once the Thunderhead missiles start unloading, you see a flurry of Wanderers as captains and crews fly over and beseige the outfitter staff, wanting to know when they can place an order.`
-			`	The construction supervisior comes over and moves his head in a way you've come to associate with humor and he watches the commotion at the other landing pad. "He hands you a credit chip for <payment> and says, "Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
+			`	There are more cameras and speeched and you are not allowed to escape this time: they insist that you sit on the platform throughout the ceremony. Once it's all over, the Director of Spaceports hands you a credit chip for <payment> and says, "Thank you, Captain <last>. You have helped us begin our new [mission, aventure] in this [hostile, dangerous] space. Soon we will be able to begin our proper work. We have many things to do and we've not even begun to explore the worlds we need to [rehabilitate, repair]. We are glad that you have chosen to [wander, toil] with us.`
 		payment 3000000
